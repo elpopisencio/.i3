@@ -42,7 +42,10 @@ bindsym $mod+f exec firefox
 bindsym $mod+c exec chromium
 
 # start android-studio
-bindsym $mod+a exec studio.sh
+bindsym $mod+a exec /opt/android-studio/bin/studio.sh
+
+# start vlc
+bindsym $mod+v exec vlc
 
 # kill focused window
 bindsym $mod+q kill
@@ -79,18 +82,18 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Shift+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+Shift+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+Shift+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
+bindsym $mod+s layout toggle split
 bindsym $mod+w layout tabbed
-#bindsym $mod+e layout toggle split
+bindsym $mod+x layout stacking
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -184,6 +187,7 @@ bar {
         status_command i3status
 }
 exec_always synclient VertEdgeScroll=1
+exec_always synclient VertTwoFingerScroll=0
 exec_always synclient TapButton1=1
 exec_always feh --bg-scale /home/popix/Pictures/wall.jpg 
 exec_always compton --config ~/.compton.conf
